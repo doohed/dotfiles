@@ -34,7 +34,25 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+# removed title bar on tiles
+default_border pixel 1
 
+default_floating_border pixel 1
+# Configure 5px of space between windows and to the screen edges.
+gaps inner 5px
+
+# Configure an additional 5px of extra space to the screen edges,
+# for a total gap of 10px to the screen edges, and 5px between windows.
+gaps outer 1px
+
+# Overwrite gaps to 0, I need all the space I can get on workspace 3.
+workspace 3 gaps inner 0
+workspace 3 gaps outer 0
+
+# Only enable outer gaps when there is exactly one window or split container on the workspace.
+smart_gaps inverse_outer
+# custom bg on sysload
+exec --no-startup-id feh --no-fehbg --bg-scale '/home/dohed/Pictures/walls/Fuji-Dark.png'
 # start a terminal
 bindsym $mod+Return exec alacritty
 
@@ -183,7 +201,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # class                 border  bground text    indicator child_border
-client.focused          #b80202 #474040 #FFFFFF #83CAFA   #474040 
+client.focused          #b80202 #474040 #FFFFFF #960000   #960000
 client.focused_inactive #8C8C8C #4C4C4C #FFFFFF #4C4C4C   #8C8C8C
 client.unfocused        #960000 #222222 #888888 #292D2E   #222222
 client.urgent           #EC69A0 #DB3279 #FFFFFF #DB3279   #DB3279
@@ -194,6 +212,7 @@ client.background       #FFFFFF
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+position top
   colors {
     background #000000
     statusline #FFFFFF
