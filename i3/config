@@ -56,7 +56,7 @@ workspace 3 gaps outer 0
 # Only enable outer gaps when there is exactly one window or split container on the workspace.
 smart_gaps inverse_outer
 # custom bg on sysload
-exec --no-startup-id feh --no-fehbg --bg-scale '/home/dohed/Pictures/walls/1305986.png'
+exec --no-startup-id feh --no-fehbg --bg-scale '/home/dohed/Pictures/red-girl.jpg'
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id alacritty
