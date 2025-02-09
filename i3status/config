@@ -1,0 +1,52 @@
+# i3status configuration file
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "volume master"
+order += "disk /"
+order += "battery 0"
+order += "memory"
+order += "cpu_temperature 0"
+order += "load"
+order += "time"
+
+# Volume settings
+
+volume master {
+    format = "Volume: %volume"
+    format_muted = "V: muted (%volume)"
+    device = "default"
+}
+
+# Battery settings
+battery 0 {
+    format = "%status %percentage %remaining"
+}
+
+# Memory settings
+memory {
+    format = "Mem: %used/%total"
+}
+
+# CPU settings
+cpu_temperature 0 {
+    format = "CPU Temp: %degrees°C"
+}
+
+# Load settings
+load {
+    format = "Load: %1min %5min %15min"
+}
+
+# Disk usage settings
+disk "/" {
+    format = "%avail GB free"
+}
+
+# Time format
+time {
+    format = "%Y-%m-%d %H:%M:%S"
+}

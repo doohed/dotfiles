@@ -19,7 +19,9 @@ exec --no-startup-id dex-autostart --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -i /home/dohed/Pictures/red-girl.png
+
+bindsym Control+$mod+l exec --no-startup-id i3lock -i /home/dohed/Pictures/red-girl.png
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -36,14 +38,14 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # Start picom 
-exec --no-startup-id picom --vsync
+exec --no-startup-id picom --vsync --backend xrender
 
 # removed title bar on tiles
-default_border pixel 1
+default_border pixel 2
 
 default_floating_border pixel 2
 # Configure 5px of space between windows and to the screen edges.
-gaps inner 4px
+gaps inner 5px
 
 # Configure an additional 5px of extra space to the screen edges,
 # for a total gap of 10px to the screen edges, and 5px between windows.
@@ -59,13 +61,16 @@ smart_gaps inverse_outer
 exec --no-startup-id feh --no-fehbg --bg-scale '/home/dohed/Pictures/red-girl.jpg'
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod+Return exec --no-startup-id kitty
+
+# start firefox 
+bindsym $mod+Shift+f exec --no-startup-id firefox
 
 # kill focused window
 bindsym $mod+c kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#005577' -sf '#EEEEEE' -fn 'monospace-10'"
+bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#cf2727' -nb '#330000' -sb '#0a0000' -sf '#EEEEEE' -fn 'monospace-12'"
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -210,7 +215,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # class                 border  bground text    indicator child_border
-client.focused          #bfbdbd #474040 #FFFFFF #bfbdbd   #bfbdbd
+client.focused          #8b0000 #474040 #FFFFFF #8b0000   #8b0000
 client.focused_inactive #8C8C8C #4C4C4C #FFFFFF #4C4C4C   #8C8C8C
 client.unfocused        #960000 #222222 #888888 #292D2E   #222222
 client.urgent           #EC69A0 #DB3279 #FFFFFF #DB3279   #DB3279
