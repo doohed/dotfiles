@@ -6,6 +6,8 @@ return {
       javascriptreact = { "prettier" },
       typescript = { "prettier" },
       typescriptreact = { "prettier" },
+      html = { "prettier" },
+      rust = { "prettier" },
     },
   },
 }
