@@ -29,6 +29,10 @@ local TRANSPARENT = true
 local aliases = {
   ["cobalt2"] = "cobalt2",
   ["hacktober"] = "hacktober",
+  -- Same palette, lighter accent row (themes/Hacktober Lumen). The editor
+  -- colorscheme is built off the base colors, which are unchanged, so it
+  -- reuses the hacktober loader rather than needing its own.
+  ["hacktober lumen"] = "hacktober",
   -- The plain "Black Metal" ghostty theme is its own palette upstream (dusty
   -- rose accents); darkthrone is the closest thing the plugin ships.
   ["black metal"] = "black-metal:darkthrone",
