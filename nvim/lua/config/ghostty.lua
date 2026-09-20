@@ -50,6 +50,12 @@ loaders["black-metal"] = function(variant)
     term_colors = true, -- `:terminal` matches the outer ghostty window
   })
   bm.load(variant, "dark")
+  -- black-metal applies its highlights directly and only assigns
+  -- `vim.g.colors_name`, so it never goes through `:colorscheme` and the
+  -- ColorScheme event never fires. The other loaders here do fire it. Emit it
+  -- by hand so integrations that re-apply their own highlights on that event
+  -- still run — lua/plugins/mini-icons.lua relinks MiniIconsFolder there.
+  vim.api.nvim_exec_autocmds("ColorScheme", { pattern = vim.g.colors_name })
 end
 
 loaders["cobalt2"] = function()

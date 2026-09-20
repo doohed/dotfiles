@@ -124,6 +124,51 @@ function M.load(transparent)
       hl.VisualNOS = { bg = "#42341f" }
       -- Parameters are plain text, not a third shade of amber.
       hl["@variable.parameter"] = { fg = c.fg_dark }
+      -- Folders. tokyonight drives Directory from its `blue` slot, which is
+      -- the palette's #5389c5 — the one cold colour in an otherwise autumn
+      -- theme, and jarring down the left edge of the explorer. Amber instead,
+      -- matching the cursor and current-line accents above.
+      --
+      -- Only Directory is touched, so functions and Title keep the blue.
+      -- Folder *icons* follow along: lua/plugins/mini-icons.lua links
+      -- MiniIconsFolder to this group. Snacks' picker and explorer link
+      -- SnacksPickerDirectory here too.
+      hl.Directory = { fg = "#d08949" }
+      -- Dashboard art (lua/plugins/dashboard.lua). Snacks links
+      -- SnacksDashboardHeader to Title, which is the palette's blue — the
+      -- same cold slot the folders were coming from. Rust instead: it's the
+      -- theme's autumn signature, and keeping it off amber means the art
+      -- doesn't compete with the folders right below it.
+      hl.SnacksDashboardHeader = { fg = "#c75a22" }
+
+      -- Cmdline, in tan. Two sets of groups, because what you actually see
+      -- depends on whether noice is running:
+      --   MsgArea      is vim's own ":" line and message area at the bottom
+      --   NoiceCmdline is noice's replacement for that same bottom line
+      --   NoiceCmdlinePopup* is the centred palette LazyVim turns ":" into
+      --                (`presets.command_palette = true`)
+      -- Setting all of them means the colour holds whether noice is enabled,
+      -- disabled, or falling back mid-startup.
+      --
+      -- noice registers its own groups with `default = true`, so these
+      -- explicit values win regardless of load order.
+      local tan = "#ac9166"
+      hl.MsgArea = { fg = tan }
+      hl.NoiceCmdline = { fg = tan }
+      hl.NoiceCmdlinePopup = { fg = tan }
+      hl.NoiceCmdlineIcon = { fg = tan }
+      hl.NoiceCmdlinePopupBorder = { fg = tan }
+      hl.NoiceCmdlinePopupTitle = { fg = tan }
+      -- `/` and `?` search too. These default to DiagnosticSignWarn (amber);
+      -- tan keeps the whole cmdline one colour. Note `presets.bottom_search`
+      -- is on, so search renders on the bottom line rather than in the
+      -- palette — NoiceCmdline above already covers the text, and this is
+      -- the leading `/` icon.
+      hl.NoiceCmdlineIconSearch = { fg = tan }
+      hl.NoiceCmdlinePopupBorderSearch = { fg = tan }
+      -- Not touched: Search / IncSearch / CurSearch, which highlight the
+      -- matches in the buffer rather than the cmdline. Those stay on the
+      -- theme's amber so a hit is still easy to spot.
     end,
   })
 

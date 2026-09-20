@@ -1,1 +1,0 @@
-/Users/dohed/Code/dotfiles/fish/conf.d/tide.fish
