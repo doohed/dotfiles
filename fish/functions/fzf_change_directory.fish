@@ -1,0 +1,1 @@
+/Users/dohed/Code/dotfiles/fish/functions/fzf_change_directory.fish

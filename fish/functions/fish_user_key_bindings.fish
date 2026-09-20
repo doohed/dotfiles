@@ -1,0 +1,1 @@
+/Users/dohed/Code/dotfiles/fish/functions/fish_user_key_bindings.fish

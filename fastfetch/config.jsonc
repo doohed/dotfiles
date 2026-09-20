@@ -1,13 +1,41 @@
-
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+    // ── Hacktober ────────────────────────────────────────────────────────
+    // Same palette as ghostty's `theme = Hacktober`, the neovim colorscheme
+    // in ~/.config/nvim/lua/config/hacktober.lua and the tide prompt in
+    // ~/Code/dotfiles/fish/conf.d/tide.fish.
+    //
+    //   amber  d08949 = 38;2;208;137;73    rust   c75a22 = 38;2;199;90;34
+    //   slate  5389c5 = 38;2;83;137;197    moss   42824a = 38;2;66;130;74
+    //   tan    ac9166 = 38;2;172;145;102   dim    867252 = 38;2;134;114;82
+    //
+    // Each section gets its own accent for its keys, the box frames sit back
+    // in the dim warm grey, and the section title takes the section accent.
+
+    // Memory/disk percentages have their own built-in green/yellow/red
+    // thresholds, which default to the terminal's bright ANSI colors and
+    // were the last thing on screen not coming from the palette.
+    "display": {
+        "percent": {
+            "color": {
+                "green": "38;2;66;130;74",
+                "yellow": "38;2;208;137;73",
+                "red": "38;2;179;69;56"
+            }
+        }
+    },
+
     "logo": {
-        "source": "~/.config/fastfetch/red.png",
-        "type": "kitty",
-        "height": 15,
-        "width": 30,
+        // Was `"type": "kitty"` pointed at a text file, which silently fell
+        // back to the built-in Apple logo — the ascii art never rendered.
+        // "file" is the type for a text logo; height/width were image-only
+        // options and did nothing here.
+        "source": "~/.config/fastfetch/ascii.txt",
+        "type": "file",
+        "color": { "1": "38;2;208;137;73" }, // amber, applied to the whole logo
         "padding": {
-            "top": 5,
+            "top": 2,
             "left": 3
         }
     },
@@ -15,114 +43,119 @@
         "break",
         {
             "type": "custom",
-            "format": "\u001b[90m┌──────────────────────Hardware──────────────────────┐"
+            "format": "\u001b[38;2;134;114;82m┌──────────────────────\u001b[38;2;199;90;34mHardware\u001b[38;2;134;114;82m──────────────────────┐"
         },
         {
             "type": "host",
-            "key": " PC",
-            "keyColor": "red"
+            "key": " PC",
+            "keyColor": "38;2;199;90;34"
         },
         {
             "type": "cpu",
-            "key": "│ ├",
+            "key": "│ ├",
             "showPeCoreCount": true,
-            "keyColor": "red"
+            "keyColor": "38;2;199;90;34"
         },
         {
             "type": "gpu",
             "key": "│ ├󰍛",
-            "keyColor": "red"
+            "keyColor": "38;2;199;90;34"
         },
         {
             "type": "memory",
             "key": "│ ├󰍛",
-            "keyColor": "red"
+            "keyColor": "38;2;199;90;34"
         },
         {
             "type": "disk",
-            "key": "└ └",
-            "keyColor": "red"
+            "key": "└ └",
+            "keyColor": "38;2;199;90;34"
         },
         {
             "type": "custom",
-            "format": "\u001b[90m└────────────────────────────────────────────────────┘"
+            "format": "\u001b[38;2;134;114;82m└────────────────────────────────────────────────────┘"
         },
         "break",
         {
             "type": "custom",
-            "format": "\u001b[90m┌──────────────────────Software──────────────────────┐"
+            "format": "\u001b[38;2;134;114;82m┌──────────────────────\u001b[38;2;83;137;197mSoftware\u001b[38;2;134;114;82m──────────────────────┐"
         },
         {
             "type": "os",
-            "key": " OS",
-            "keyColor": "red"
+            "key": " OS",
+            "keyColor": "38;2;83;137;197"
         },
         {
             "type": "kernel",
-            "key": "│ ├",
-            "keyColor": "red"
+            "key": "│ ├",
+            "keyColor": "38;2;83;137;197"
         },
         {
             "type": "packages",
             "key": "│ ├󰏖",
-            "keyColor": "red"
+            "keyColor": "38;2;83;137;197"
         },
         {
             "type": "shell",
-            "key": "└ └",
-            "keyColor": "red"
+            "key": "└ └",
+            "keyColor": "38;2;83;137;197"
         },
         "break",
         {
             "type": "de",
-            "key": " DE",
-            "keyColor": "red"
+            "key": " DE",
+            "keyColor": "38;2;66;130;74"
         },
         {
             "type": "lm",
-            "key": "│ ├",
-            "keyColor": "red"
+            "key": "│ ├",
+            "keyColor": "38;2;66;130;74"
         },
         {
             "type": "wm",
-            "key": "│ ├",
-            "keyColor": "red"
+            "key": "│ ├",
+            "keyColor": "38;2;66;130;74"
         },
         {
             "type": "wmtheme",
             "key": "│ ├󰉼",
-            "keyColor": "red"
+            "keyColor": "38;2;66;130;74"
         },
         {
             "type": "gpu",
             "key": "└ └󰍛",
             "format": "{3}",
-            "keyColor": "red"
+            "keyColor": "38;2;66;130;74"
         },
         {
             "type": "custom",
-            "format": "\u001b[90m└────────────────────────────────────────────────────┘"
+            "format": "\u001b[38;2;134;114;82m└────────────────────────────────────────────────────┘"
         },
         "break",
         {
             "type": "custom",
-            "format": "\u001b[90m┌────────────────────Uptime / Age────────────────────┐"
+            "format": "\u001b[38;2;134;114;82m┌────────────────────\u001b[38;2;208;137;73mUptime / Age\u001b[38;2;134;114;82m────────────────────┐"
         },
         {
+            // Was `stat -c %W /`, which is GNU syntax: BSD stat rejects `-c`,
+            // so $birth_install was empty and this printed days-since-1970
+            // (~20700). `stat -f %B` is the BSD spelling. /var/db/.AppleSetupDone
+            // is the first-boot marker — `/` only reports the last OS update,
+            // because an APFS update re-creates the root snapshot.
             "type": "command",
             "key": "  OS Age ",
-            "keyColor": "red",
-            "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
+            "keyColor": "38;2;208;137;73",
+            "text": "birth=$(stat -f %B /var/db/.AppleSetupDone 2>/dev/null || stat -f %B /); echo $(( ( $(date +%s) - birth ) / 86400 )) days"
         },
         {
             "type": "uptime",
             "key": "  Uptime ",
-            "keyColor": "red"
+            "keyColor": "38;2;208;137;73"
         },
         {
             "type": "custom",
-            "format": "\u001b[90m└────────────────────────────────────────────────────┘"
+            "format": "\u001b[38;2;134;114;82m└────────────────────────────────────────────────────┘"
         },
-        "break",
+        "break"
     ]
 }

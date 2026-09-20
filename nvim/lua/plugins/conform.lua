@@ -8,6 +8,7 @@ return {
       typescriptreact = { "prettier" },
       html = { "prettier" },
       rust = { "prettier" },
+      astro = { "prettier" },
     },
   },
 }

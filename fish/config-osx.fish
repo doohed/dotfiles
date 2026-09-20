@@ -1,0 +1,1 @@
+/Users/dohed/Code/dotfiles/fish/config-osx.fish
