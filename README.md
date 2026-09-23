@@ -4,7 +4,9 @@ These are my collection of dotfiles
 
 <img width="1073" height="718" alt="image" src="https://github.com/user-attachments/assets/7240aad1-a6c2-437e-944f-047343a35d1a" />
 <img width="1077" height="727" alt="image" src="https://github.com/user-attachments/assets/70501d6f-2ad7-4896-b1b5-f812175f39db" />
-<img width="1075" height="720" alt="image" src="https://github.com/user-attachments/assets/375c0f4c-3698-4ab6-8c59-648d847d231b" />
+
+<img width="1080" height="729" alt="image" src="https://github.com/user-attachments/assets/f178d0ea-2764-4c95-b76f-910474449486" />
+
 
 
 ## Disclaimer
