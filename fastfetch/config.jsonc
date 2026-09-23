@@ -8,8 +8,8 @@
     // theme has no yellow or true green, so the warm roles below all fold
     // into coral and the cool ones spread across the blues.
     //
-    //   mint   99ffe4 = 38;2;153;255;228   coral  ff8080 = 38;2;255;128;128
-    //   blue   3b82f6 = 38;2;59;130;246    sky    93c5fd = 38;2;147;197;253
+    //   mint   99ffe4 = 38;2;153;255;228   coral  ff8080 = 38;2;153;255;228
+    //   blue   3b82f6 = 38;2;153;255;228    sky    93c5fd = 38;2;147;197;253
     //   azure  60a5fa = 38;2;96;165;250    grey   a0a0a0 = 38;2;160;160;160
     //
     // Each section gets its own accent for its keys, the box frames sit back
@@ -24,7 +24,7 @@
             "color": {
                 "green": "38;2;153;255;228",
                 "yellow": "38;2;96;165;250",
-                "red": "38;2;255;128;128"
+                "red": "38;2;153;255;228"
             }
         }
     },
@@ -46,89 +46,53 @@
         "break",
         {
             "type": "custom",
-            "format": "\u001b[38;2;160;160;160m┌──────────────────────\u001b[38;2;255;128;128mHardware\u001b[38;2;160;160;160m──────────────────────┐"
+            "format": "\u001b[38;2;160;160;160m┌────────────────────────────────────────────────────┐"
         },
         {
             "type": "host",
             "key": " PC",
-            "keyColor": "38;2;255;128;128"
+            "keyColor": "38;2;153;255;228"
         },
         {
             "type": "cpu",
             "key": "│ ├",
             "showPeCoreCount": true,
-            "keyColor": "38;2;255;128;128"
+            "keyColor": "38;2;153;255;228"
         },
         {
             "type": "gpu",
             "key": "│ ├󰍛",
-            "keyColor": "38;2;255;128;128"
+            "keyColor": "38;2;153;255;228"
         },
         {
             "type": "memory",
             "key": "│ ├󰍛",
-            "keyColor": "38;2;255;128;128"
+            "keyColor": "38;2;153;255;228"
         },
         {
             "type": "disk",
             "key": "└ └",
-            "keyColor": "38;2;255;128;128"
-        },
-        {
-            "type": "custom",
-            "format": "\u001b[38;2;160;160;160m└────────────────────────────────────────────────────┘"
-        },
-        "break",
-        {
-            "type": "custom",
-            "format": "\u001b[38;2;160;160;160m┌──────────────────────\u001b[38;2;59;130;246mSoftware\u001b[38;2;160;160;160m──────────────────────┐"
+            "keyColor": "38;2;153;255;228"
         },
         {
             "type": "os",
             "key": " OS",
-            "keyColor": "38;2;59;130;246"
+            "keyColor": "38;2;153;255;228"
         },
         {
             "type": "kernel",
             "key": "│ ├",
-            "keyColor": "38;2;59;130;246"
+            "keyColor": "38;2;153;255;228"
         },
         {
             "type": "packages",
             "key": "│ ├󰏖",
-            "keyColor": "38;2;59;130;246"
+            "keyColor": "38;2;153;255;228"
         },
         {
             "type": "shell",
             "key": "└ └",
-            "keyColor": "38;2;59;130;246"
-        },
-        "break",
-        {
-            "type": "de",
-            "key": " DE",
-            "keyColor": "38;2;147;197;253"
-        },
-        {
-            "type": "lm",
-            "key": "│ ├",
-            "keyColor": "38;2;147;197;253"
-        },
-        {
-            "type": "wm",
-            "key": "│ ├",
-            "keyColor": "38;2;147;197;253"
-        },
-        {
-            "type": "wmtheme",
-            "key": "│ ├󰉼",
-            "keyColor": "38;2;147;197;253"
-        },
-        {
-            "type": "gpu",
-            "key": "└ └󰍛",
-            "format": "{3}",
-            "keyColor": "38;2;147;197;253"
+            "keyColor": "38;2;153;255;228"
         },
         {
             "type": "custom",
