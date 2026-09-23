@@ -33,6 +33,12 @@ local aliases = {
   -- colorscheme is built off the base colors, which are unchanged, so it
   -- reuses the hacktober loader rather than needing its own.
   ["hacktober lumen"] = "hacktober",
+  -- Both of these are themes ghostty ships rather than files under
+  -- ~/.config/ghostty/themes — `ghostty +list-themes` lists them. Atlas
+  -- Ragnarok is blue/mint/coral on pure black; Noctis Obscuro is the darkest
+  -- of ghostty's eleven Noctis variants, a near-black teal.
+  ["atlas ragnarok"] = "atlas-ragnarok",
+  ["noctis obscuro"] = "noctis-obscuro",
   -- The plain "Black Metal" ghostty theme is its own palette upstream (dusty
   -- rose accents); darkthrone is the closest thing the plugin ships.
   ["black metal"] = "black-metal:darkthrone",
@@ -68,6 +74,14 @@ end
 
 loaders["hacktober"] = function()
   require("config.hacktober").load(TRANSPARENT)
+end
+
+loaders["atlas-ragnarok"] = function()
+  require("config.atlas_ragnarok").load(TRANSPARENT)
+end
+
+loaders["noctis-obscuro"] = function()
+  require("config.noctis_obscuro").load(TRANSPARENT)
 end
 
 --- Read the active theme out of ghostty's config.

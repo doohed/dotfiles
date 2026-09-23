@@ -8,7 +8,9 @@
 -- apart, so a colorscheme only has to set `Directory` and both the folder
 -- names and their icons follow.
 --
--- lua/config/hacktober.lua sets that `Directory` colour (amber #d08949).
+-- Each hand-built palette sets that `Directory` colour:
+-- lua/config/hacktober.lua (amber #d08949), lua/config/atlas_ragnarok.lua
+-- (blue #60a5fa), lua/config/noctis_obscuro.lua (blue #49ace9).
 
 return {
   {

@@ -9,9 +9,10 @@
 -- each text item independently (see D:align in snacks/dashboard.lua), so
 -- ragged lines would each get centred on their own and the art would shear.
 --
--- Colour is not set here: lua/config/hacktober.lua paints
--- SnacksDashboardHeader (rust #c75a22). Snacks links that group to Title by
--- default, which is why it arrived blue.
+-- Colour is not set here; each hand-built palette in lua/config/ paints
+-- SnacksDashboardHeader itself — hacktober.lua rust #c75a22,
+-- atlas_ragnarok.lua mint #99ffe4, noctis_obscuro.lua blue #49ace9.
+-- tokyonight drives that group from its `blue` slot by default.
 
 return {
   {

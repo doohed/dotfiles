@@ -1,0 +1,45 @@
+# Hacktober Lumen — Hacktober's autumn palette with the accents lifted.
+#
+# Slots 0-8 keep Hacktober's earthy base (only brick, plum and the grey are
+# nudged up, so ANSI text clears 4.5:1 on the background instead of the 3.3:1
+# the original leaves them at). Slots 9-15 are the change: Hacktober's bright
+# row is barely brighter than its normal row, so the two are hard to tell
+# apart and nothing in the palette is light enough to carry dark text. Here
+# they become genuinely light — coral, lime, apricot, sky, rose, wheat — each
+# at 6.9:1 or better against near-black, which is what lets the tide prompt
+# run dark-on-light rainbow segments.
+#
+# Counterpart: ~/.config/fish/functions/tide_hacktober_lumen.fish paints the
+# prompt from the same sixteen colors.
+
+# --- base: Hacktober, near enough ---
+palette = 0=#191918
+palette = 1=#cf5b48
+palette = 2=#6b9150
+palette = 3=#e09a52
+palette = 4=#3a83d8
+palette = 5=#b06b78
+palette = 6=#c1a476
+palette = 7=#f1eee7
+palette = 8=#5a5754
+
+# --- light accents ---
+palette = 9=#f0846c
+palette = 10=#9ed37f
+palette = 11=#f5b96f
+palette = 12=#8fbdf0
+palette = 13=#f4aebc
+palette = 14=#f5dfa8
+palette = 15=#ffffff
+
+background = #141414
+foreground = #d2cfc8
+
+cursor-color = #f5b96f
+cursor-text = #141414
+
+# Hacktober sets selection-background to #141414 — the same as the background,
+# so a selection is invisible apart from the text shifting. This is a warm
+# grey instead: 5.7:1 under the foreground, and it reads as part of the theme.
+selection-background = #3f3a33
+selection-foreground = #f1eee7

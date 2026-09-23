@@ -1,9 +1,38 @@
-# Matches the cobalt2 palette in ~/.config/starship.toml
-theme = "Hacktober"
 
-background-opacity = 0.77
-background-blur-radius = 20
+# Custom theme, in ~/.config/ghostty/themes/. Hacktober's palette with the
+# bright row lifted to real light accents; `theme = "Hacktober"` for the
+# original. nvim follows this line (see nvim/lua/config/ghostty.lua).
+# Dark themes that also pair well with glass: "Catppuccin Mocha",
+# "TokyoNight Storm", "Kanagawa Wave", "Nord".
+theme = "Noctis Obscuro"
+
+# Liquid glass (macOS 26+).
+#
+# Readability over a busy wallpaper depends on all three of these:
+#
+#   macos-glass-regular  frosts/diffuses what is behind the window.
+#                        macos-glass-clear does NOT blur -- it is just
+#                        transparent, so a photo comes through sharp.
+#   background-opacity   how much of `background` tints the glass.
+#                        Leave it unset and it is forced to 0 (no tint).
+#                        0.45-0.65 stays readable over anything.
+#   a dark theme         the tint color IS the theme background, so a
+#                        light theme gives you dark text on a bright
+#                        photo with nothing in between.
+#
+# NOTE: only understood by a build from source; stable 1.3.1 will warn.
+macos-liquid-glass = true
+background-blur    = macos-glass-clear
+background-opacity = 0.8
 background = #000000
+
+# Blur behind the window, on top of which the glass rim still refracts.
+# Glass only bends light at the EDGE of its shape, so the middle stays
+# plainly see-through; this frosts it. 0 = off, ~20 = a good frost,
+# higher blurs more but costs performance.
+# The blur is uniform across the window -- the edges just keep the glass
+# highlight drawn over it.
+macos-liquid-glass-blur = 20
 
 font-family = "JetBrainsMono Nerd Font Mono"
 font-size = 13
@@ -23,3 +52,19 @@ command = /opt/homebrew/bin/fish --login --interactive
 macos-option-as-alt = left
 keybind = alt+left=unbind
 keybind = alt+right=unbind
+
+# Tab bar. There is no separate opacity knob for the titlebar on macOS --
+# the tab strip is painted with `background` at `background-opacity`, so
+# whatever tints the terminal body tints the tabs by exactly as much.
+# `background-opacity = 0` (the liquid-glass default) is the only way to
+# get a fully untinted, clear-glass tab bar.
+#   transparent  titlebar lets the window background through; seamless
+#                with glass, and the only style that stays see-through
+#   tabs         custom tab bar ALWAYS painted with the background color
+#   native       opaque macOS titlebar + tab bar
+# Only applies to NEW windows when changed at runtime.
+macos-titlebar-style = transparent
+
+# Keeps titlebar text/buttons light. Purely the chrome's appearance --
+# it does not tint the glass.
+window-theme = dark

@@ -16,9 +16,10 @@ return {
   },
 
   -- Host for the palettes that have no neovim plugin of their own, each
-  -- registered as an extra tokyonight style: Cobalt2 (lua/config/cobalt2.lua)
-  -- and Hacktober (lua/config/hacktober.lua). Set ghostty to `theme =
-  -- Cobalt2` or `theme = Hacktober` and one of them loads.
+  -- registered as an extra tokyonight style and each built in lua/config/:
+  -- cobalt2.lua, hacktober.lua, atlas_ragnarok.lua, noctis_obscuro.lua. Set
+  -- ghostty to `theme = Cobalt2`, `theme = Hacktober`, `theme = "Atlas
+  -- Ragnarok"` or `theme = "Noctis Obscuro"` and the matching one loads.
   {
     "folke/tokyonight.nvim",
     lazy = false,
