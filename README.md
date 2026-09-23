@@ -8,6 +8,7 @@ These are my collection of dotfiles
 ## Disclaimer
 
 My current Ghostty configuration works with a my forked version of it, I just wanted to add Liquid Glass.
+<br/>
 This is a demo with less opacity to showcase the material:
 <img width="1000" height="737" alt="Screen Recording 2026-09-22 at 12 48 52 a m -2" src="https://github.com/user-attachments/assets/224c0cd9-d926-466f-b375-22b63ee48fa8" />
 
