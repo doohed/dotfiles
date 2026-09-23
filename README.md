@@ -20,4 +20,4 @@ Currently just using
 - Ghostty
 - nvim
 - fish
-- fast fetch
+- fastfetch
